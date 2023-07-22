@@ -68,16 +68,25 @@ input{
     <button onclick="getUserProfile()" class="button-50" type="submit">View Profile</button>
     <div id="profileInfo"></div>
   </div>
+  <div id="reposContainer"></div>
+
+ 
+
+
+
 
   <script>
+
+
+
     function getUserProfile() {
-      const username = document.getElementById('username').value;
-      if (!username) {
+      const usernamed = document.getElementById('username').value;
+      if (!usernamed) {
         alert('Please enter a GitHub username.');
         return;
       }
 
-      fetch(`https://api.github.com/users/${username}`)
+      fetch(`https://api.github.com/users/${usernamed}`)
                 .then(response => {
           if (!response.ok) {
             throw new Error('User not found');
@@ -96,7 +105,8 @@ input{
             <h2>${data.name}</h2>
             <p>${data.bio}</p>
             <p>Followers: ${data.followers}</p>
-            <p><a href="${data.repos_url}" target="_blank">Repositories: ${data.public_repos}</a></p>
+            <p><a href="repos.html?variable=${username}" target="blank">Repositories: ${data.public_repos}</a></p>
+            
             <p><a href="${data.html_url}" target="_blank">View Profile on GitHub</a></p>
           `;
         })
@@ -105,6 +115,18 @@ input{
           alert('User you entered not found Please try again.');
         });
     }
+    // new section 
+
+
+   
+       
+ 
+
+ 
+            
+          
+
+
   </script>
 </body>
 </html>
