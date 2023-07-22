@@ -99,13 +99,13 @@ input{
             console.log('bio nhi hai')
             data.bio="";
             
-          }
+          }console.log(usernamed)
           profileInfo.innerHTML = `
             <img src="${data.avatar_url}" alt="Profile Picture">
             <h2>${data.name}</h2>
             <p>${data.bio}</p>
             <p>Followers: ${data.followers}</p>
-            <p><a href="repos.html?variable=${username}" target="blank">Repositories: ${data.public_repos}</a></p>
+            <p><a href="repos.html?variable=${usernamed}" target="blank">Repositories: ${data.public_repos}</a></p>
             
             <p><a href="${data.html_url}" target="_blank">View Profile on GitHub</a></p>
           `;
